@@ -1165,39 +1165,45 @@
             color: var(--text-primary);
         }
 
-        /* ───────────── PROJECTS GRID ───────────── */
-        .projects-grid {
+        /* ───────────── HOME PROJECTS GRID ───────────── */
+        .home-projects-section {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 80px 32px;
+        }
+
+        .home-projects-section .projects-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 22px;
             max-width: 1300px;
             margin: 0 auto;
-            padding: 0 0 20px;
         }
 
         @media (max-width: 1024px) {
-            .projects-grid {
+            .home-projects-section .projects-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 18px;
             }
         }
         @media (max-width: 768px) {
-            .projects-grid {
+            .home-projects-section .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 14px;
             }
-            .section {
+            .home-projects-section {
                 padding: 50px 20px;
             }
         }
         @media (max-width: 480px) {
-            .projects-grid {
+            .home-projects-section .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
         }
 
-        .project-card {
+        .home-projects-section .project-card {
             background: var(--bg-card);
             border-radius: var(--radius-md);
             overflow: hidden;
@@ -1209,13 +1215,13 @@
             position: relative;
         }
 
-        .project-card:hover {
+        .home-projects-section .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(124, 92, 252, 0.15);
             background: var(--bg-card-hover);
         }
 
-        .project-card .card-image {
+        .home-projects-section .project-card .card-image {
             width: 100%;
             aspect-ratio: 4/3;
             overflow: hidden;
@@ -1223,19 +1229,19 @@
             position: relative;
         }
 
-        .project-card .card-image img {
+        .home-projects-section .project-card .card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s ease, filter 0.5s ease;
         }
 
-        .project-card:hover .card-image img {
+        .home-projects-section .project-card:hover .card-image img {
             transform: scale(1.08);
             filter: brightness(1.05);
         }
 
-        .project-card .card-image .image-count {
+        .home-projects-section .project-card .card-image .image-count {
             position: absolute;
             bottom: 10px;
             right: 10px;
@@ -1248,7 +1254,7 @@
             border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .project-card .card-overlay-icon {
+        .home-projects-section .project-card .card-overlay-icon {
             position: absolute;
             top: 14px;
             right: 14px;
@@ -1269,17 +1275,17 @@
             pointer-events: none;
         }
 
-        .project-card:hover .card-overlay-icon {
+        .home-projects-section .project-card:hover .card-overlay-icon {
             opacity: 1;
             transform: translateY(0) scale(1);
         }
 
-        .project-card .card-info {
+        .home-projects-section .project-card .card-info {
             padding: 14px 16px 16px;
             flex: 1;
         }
 
-        .project-card .card-info h3 {
+        .home-projects-section .project-card .card-info h3 {
             font-family: 'Playfair Display', serif;
             font-size: 0.95rem;
             font-weight: 600;
@@ -1287,7 +1293,138 @@
             line-height: 1.3;
         }
 
-        .project-card .card-info .card-tag {
+        .home-projects-section .project-card .card-info .card-tag {
+            font-size: 0.55rem;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            background: rgba(124, 92, 252, 0.12);
+            color: var(--accent-1);
+            padding: 2px 12px;
+            border-radius: 50px;
+            display: inline-block;
+            border: 1px solid rgba(124, 92, 252, 0.06);
+        }
+
+        /* ───────────── PROJECTS PAGE GRID ───────────── */
+        .projects-page-grid .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 0 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .projects-page-grid .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+            }
+        }
+        @media (max-width: 768px) {
+            .projects-page-grid .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .projects-page-grid .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+
+        .projects-page-grid .project-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .projects-page-grid .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(124, 92, 252, 0.15);
+            background: var(--bg-card-hover);
+        }
+
+        .projects-page-grid .project-card .card-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: #111;
+            position: relative;
+        }
+
+        .projects-page-grid .project-card .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease, filter 0.5s ease;
+        }
+
+        .projects-page-grid .project-card:hover .card-image img {
+            transform: scale(1.08);
+            filter: brightness(1.05);
+        }
+
+        .projects-page-grid .project-card .card-image .image-count {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(6px);
+            padding: 3px 12px;
+            border-radius: 50px;
+            font-size: 0.6rem;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .projects-page-grid .project-card .card-overlay-icon {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(6px);
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            opacity: 0;
+            transform: translateY(-8px) scale(0.85);
+            transition: all 0.35s ease;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            pointer-events: none;
+        }
+
+        .projects-page-grid .project-card:hover .card-overlay-icon {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .projects-page-grid .project-card .card-info {
+            padding: 14px 16px 16px;
+            flex: 1;
+        }
+
+        .projects-page-grid .project-card .card-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+            line-height: 1.3;
+        }
+
+        .projects-page-grid .project-card .card-info .card-tag {
             font-size: 0.55rem;
             letter-spacing: 1.4px;
             text-transform: uppercase;
@@ -2318,6 +2455,22 @@
             </div>
         </section>
 
+        <!-- ─── HOME PROJECTS (CLIENT-FACING) ─── -->
+        <section class="home-projects-section" id="homeProjectsSection">
+            <div class="section-title reveal" style="font-size:2.2rem;">
+                My <span class="gradient-text">Projects</span>
+            </div>
+            <p class="section-subtitle reveal" style="margin-bottom:36px;">
+                Explore my creative work across design, AI, video, and more.
+            </p>
+            <div class="projects-grid reveal" id="homeProjectsGrid">
+                <!-- Populated by JS -->
+            </div>
+            <div style="text-align:center; margin-top:36px;" class="reveal">
+                <a class="btn btn-outline nav-link" data-page="projects"><i class="fa-regular fa-images"></i> View All Projects</a>
+            </div>
+        </section>
+
         <!-- ─── CONTACT ─── -->
         <section class="contact-section" id="contactSection">
             <h2 class="section-title reveal">Let's Work <span class="gradient-text">Together!</span></h2>
@@ -2369,7 +2522,7 @@
             <button class="btn btn-outline btn-sm" style="margin-top:12px;" id="backToHomeBtn"><i class="fa-solid fa-arrow-left"></i> Back to Home</button>
         </section>
 
-        <section class="section" style="padding-top: 40px;">
+        <section class="section projects-page-grid" style="padding-top: 40px;">
             <div class="projects-grid" id="projectsGrid">
                 <!-- Populated by JS -->
             </div>
@@ -2525,6 +2678,7 @@
         let galleryIsDragging = false;
 
         // ─── DOM REFS ──────────────────────────────────────
+        const homeProjectsGrid = document.getElementById('homeProjectsGrid');
         const projectsGrid = document.getElementById('projectsGrid');
         const servicesGrid = document.getElementById('servicesGrid');
         const adminProjectList = document.getElementById('adminProjectList');
@@ -2721,49 +2875,86 @@
                 const card = document.createElement('div');
                 card.className = 'service-card reveal';
                 card.innerHTML = `
-                    <span class="icon">${s.icon}</span>
-                    <h4>${s.name}</h4>
-                `;
+                        <span class="icon">${s.icon}</span>
+                        <h4>${s.name}</h4>
+                    `;
                 servicesGrid.appendChild(card);
             });
             setTimeout(observeReveal, 100);
         }
 
-        // ─── RENDER PROJECTS ──────────────────────────────
+        // ─── RENDER PROJECTS (BOTH HOME + PROJECTS PAGE) ───
         function renderProjects() {
-            if (!projectsGrid) return;
-            if (!projects.length) {
-                projectsGrid.innerHTML = `
-                    <p style="grid-column:1/-1; text-align:center; color:var(--text-muted); padding:50px 0; font-size:0.9rem;">
-                        No projects yet. <br> <span style="color:var(--accent-1);">Click the ⚙️ icon at the bottom to add projects.</span>
-                    </p>
-                `;
-                return;
+            // Render on Home page
+            if (homeProjectsGrid) {
+                if (!projects.length) {
+                    homeProjectsGrid.innerHTML = `
+                            <p style="grid-column:1/-1; text-align:center; color:var(--text-muted); padding:30px 0; font-size:0.9rem;">
+                                No projects yet. <br> <span style="color:var(--accent-1);">Click the ⚙️ icon at the bottom to add projects.</span>
+                            </p>
+                        `;
+                } else {
+                    homeProjectsGrid.innerHTML = '';
+                    const sorted = [...projects].reverse();
+                    // Show only first 8 on home
+                    const display = sorted.slice(0, 8);
+                    display.forEach(p => {
+                        const cover = p.images && p.images[0] ? p.images[0] :
+                            'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"%3E%3Crect fill="%231a1535" width="400" height="300"/%3E%3Ctext x="200" y="150" font-family="sans-serif" font-size="24" fill="%236b6390" text-anchor="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
+                        const card = document.createElement('div');
+                        card.className = 'project-card reveal';
+                        card.dataset.projectId = p.id;
+                        card.innerHTML = `
+                                <div class="card-image">
+                                    <img src="${cover}" alt="${p.title}" loading="lazy" />
+                                    <div class="card-overlay-icon"><i class="fa-solid fa-expand"></i></div>
+                                    ${p.images && p.images.length > 1 ? `<span class="image-count">+${p.images.length - 1}</span>` : ''}
+                                </div>
+                                <div class="card-info">
+                                    <span class="card-tag">${p.category || 'Uncategorized'}</span>
+                                    <h3>${p.title}</h3>
+                                </div>
+                            `;
+                        card.addEventListener('click', () => openGallery(p));
+                        homeProjectsGrid.appendChild(card);
+                    });
+                }
             }
 
-            projectsGrid.innerHTML = '';
-            const sorted = [...projects].reverse();
-            sorted.forEach(p => {
-                const cover = p.images && p.images[0] ? p.images[0] :
-                    'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"%3E%3Crect fill="%231a1535" width="400" height="300"/%3E%3Ctext x="200" y="150" font-family="sans-serif" font-size="24" fill="%236b6390" text-anchor="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
+            // Render on Projects page
+            if (projectsGrid) {
+                if (!projects.length) {
+                    projectsGrid.innerHTML = `
+                            <p style="grid-column:1/-1; text-align:center; color:var(--text-muted); padding:50px 0; font-size:0.9rem;">
+                                No projects yet. <br> <span style="color:var(--accent-1);">Click the ⚙️ icon at the bottom to add projects.</span>
+                            </p>
+                        `;
+                } else {
+                    projectsGrid.innerHTML = '';
+                    const sorted = [...projects].reverse();
+                    sorted.forEach(p => {
+                        const cover = p.images && p.images[0] ? p.images[0] :
+                            'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"%3E%3Crect fill="%231a1535" width="400" height="300"/%3E%3Ctext x="200" y="150" font-family="sans-serif" font-size="24" fill="%236b6390" text-anchor="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
+                        const card = document.createElement('div');
+                        card.className = 'project-card reveal';
+                        card.dataset.projectId = p.id;
+                        card.innerHTML = `
+                                <div class="card-image">
+                                    <img src="${cover}" alt="${p.title}" loading="lazy" />
+                                    <div class="card-overlay-icon"><i class="fa-solid fa-expand"></i></div>
+                                    ${p.images && p.images.length > 1 ? `<span class="image-count">+${p.images.length - 1}</span>` : ''}
+                                </div>
+                                <div class="card-info">
+                                    <span class="card-tag">${p.category || 'Uncategorized'}</span>
+                                    <h3>${p.title}</h3>
+                                </div>
+                            `;
+                        card.addEventListener('click', () => openGallery(p));
+                        projectsGrid.appendChild(card);
+                    });
+                }
+            }
 
-                const card = document.createElement('div');
-                card.className = 'project-card reveal';
-                card.dataset.projectId = p.id;
-                card.innerHTML = `
-                    <div class="card-image">
-                        <img src="${cover}" alt="${p.title}" loading="lazy" />
-                        <div class="card-overlay-icon"><i class="fa-solid fa-expand"></i></div>
-                        ${p.images && p.images.length > 1 ? `<span class="image-count">+${p.images.length - 1}</span>` : ''}
-                    </div>
-                    <div class="card-info">
-                        <span class="card-tag">${p.category || 'Uncategorized'}</span>
-                        <h3>${p.title}</h3>
-                    </div>
-                `;
-                card.addEventListener('click', () => openGallery(p));
-                projectsGrid.appendChild(card);
-            });
             setTimeout(observeReveal, 100);
         }
 
@@ -2780,16 +2971,16 @@
                 const div = document.createElement('div');
                 div.className = 'admin-list-item';
                 div.innerHTML = `
-                    <div class="item-info">
-                        <strong>${p.title}</strong>
-                        <span class="badge">${p.category || 'Uncategorized'}</span>
-                        <span style="font-size:0.6rem; color:var(--text-muted);">${(p.images||[]).length} images</span>
-                    </div>
-                    <div class="item-actions">
-                        <button class="edit-btn" data-id="${p.id}"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
-                        <button class="del-btn" data-id="${p.id}"><i class="fa-regular fa-trash-can"></i> Delete</button>
-                    </div>
-                `;
+                        <div class="item-info">
+                            <strong>${p.title}</strong>
+                            <span class="badge">${p.category || 'Uncategorized'}</span>
+                            <span style="font-size:0.6rem; color:var(--text-muted);">${(p.images||[]).length} images</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="edit-btn" data-id="${p.id}"><i class="fa-regular fa-pen-to-square"></i> Edit</button>
+                            <button class="del-btn" data-id="${p.id}"><i class="fa-regular fa-trash-can"></i> Delete</button>
+                        </div>
+                    `;
                 adminProjectList.appendChild(div);
             });
 
@@ -3095,7 +3286,7 @@
             if (page === 'home') document.getElementById('homePage').classList.add('active');
             else if (page === 'projects') document.getElementById('projectsPage').classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            if (page === 'projects') renderProjects();
+            if (page === 'projects' || page === 'home') renderProjects();
         }
 
         document.getElementById('logoLink').addEventListener('click', (e) => {
@@ -3267,6 +3458,7 @@
         console.log('🔑 ImgBB API Key: ' + (IMGBB_KEY ? 'Set' : 'NOT SET'));
         console.log('📂 Projects stored in localStorage.');
         console.log('💡 If upload fails, check your ImgBB API key in Admin Panel → Settings.');
+        console.log('✅ Projects now appear on the home page (client-facing) and projects page.');
     </script>
 
 </body>
